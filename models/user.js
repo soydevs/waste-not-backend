@@ -5,6 +5,11 @@ const userSchema = new Schema({
         type: String,
         required: true
     }, 
+    password: {
+        type: String,
+        required: true,
+        select:false
+    },
     name: {
         type: String,
         required: true
@@ -21,7 +26,8 @@ const userSchema = new Schema({
     },
     color: {
         type: String,
-        default:'#00ffff'
+        default:'#00ffff',
+        required: true
     },
     pic: {
         type:String,

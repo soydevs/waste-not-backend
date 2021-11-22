@@ -5,6 +5,10 @@ const volunteerSchema = new Schema({
         type: String,
         required: true
     }, 
+    password: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true
@@ -25,7 +29,8 @@ const volunteerSchema = new Schema({
     },
     color: {
         type: String,
-        default:'#00ffff'
+        default:'#00ffff',
+        required:true
     },
     pic: {
         type:String,
