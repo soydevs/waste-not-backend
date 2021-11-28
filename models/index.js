@@ -1,5 +1,6 @@
-import { User }  from './user';
-import { Volunteer } from './volunteer';
-import { DisposeRequest } from './dispose_request';
+const { User } = require('./user');
+const { Volunteer } = require('./volunteer');
+const { DisposeRequest } = require('./dispose_request');
+const { Price } = require('./price');
 
-export { User, Volunteer, DisposeRequest };
+module.exports = { User, Volunteer, DisposeRequest, Price };

@@ -1,5 +1,5 @@
-import express from 'express';
-import { userController } from '../controllers';
+const express = require('express');
+const { userController } = require('../controllers');
 
 var router = express.Router();
 
@@ -13,4 +13,4 @@ router.patch('/', async (req, res) => {
   res.status(code).send(data)
 })
 
-export default router;
+module.exports = router;

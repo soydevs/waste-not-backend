@@ -1,5 +1,5 @@
-import express from 'express';
-import { userAuthController, volunteerAuthController } from'../controllers';
+const express = require('express');
+const { userAuthController, volunteerAuthController } = require('../controllers');
 
 var router = express.Router()
 
@@ -23,4 +23,4 @@ router.post('/volunteer/login', async(req, res) => {
     res.status(code).send(data)
 })
 
-export default router;
+module.exports = router;

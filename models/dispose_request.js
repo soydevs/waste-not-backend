@@ -1,4 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
+var mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const disposeRequestSchema = new Schema({
     uid: {
@@ -39,8 +40,14 @@ const disposeRequestSchema = new Schema({
     status: {
         type: String,
         default: 'pending'
+    },
+    price: {
+        type:String,
+        required:true
     }
+}, {
+    timestamps:true
 })
 
 const DisposeRequest = mongoose.model('Dispose', disposeRequestSchema);
-export { DisposeRequest };
+module.exports = { DisposeRequest };

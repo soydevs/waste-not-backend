@@ -1,6 +1,6 @@
-import { User } from '../../models';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+const { User } = require('../../models');
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
 
 const colors = ['red', 'blue', 'pink'];
 
@@ -73,4 +73,4 @@ const loginUser = async (data) => {
 }
 
 const userAuthController = { registerUser, loginUser }
-export default userAuthController;
+module.exports = userAuthController;

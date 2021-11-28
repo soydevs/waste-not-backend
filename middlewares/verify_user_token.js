@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
-import { User } from '../models';
+var jwt = require('jsonwebtoken');
+var { User } = require('../models');
 
-export default async function verifyUserToken(req, res, next) {
+async function verifyUserToken(req, res, next) {
     const header = req.header("Authorization");
     const invalidResponse = { "success":false, "message": "Access denied" };
     if(!header) {
@@ -28,3 +28,5 @@ export default async function verifyUserToken(req, res, next) {
         res.status(401).send(invalidResponse)
     }
 }
+
+module.exports = verifyUserToken;

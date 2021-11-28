@@ -1,14 +1,24 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/user_routes');
+var cors = require('cors');
+
+
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log("Connected to db"))
+.catch((err) => console.log("error in connecting to db" + err));
 
 var app = express();
-
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

@@ -1,9 +1,13 @@
-import userAuthController from './auth/user_auth';
-import volunteerAuthController from './auth/volunteer_auth';
-import userController from './user_controller';
+const userAuthController = require('./auth/user_auth');
+const volunteerAuthController = require('./auth/volunteer_auth');
+const userController = require('./user_controller');
+const disposeRequestController = require('./dispose_request_controller');
+const priceController = require('./price_controller');
 
-export { 
+module.exports = { 
     userAuthController, 
     volunteerAuthController,
-    userController
+    userController,
+    disposeRequestController,
+    priceController
 };

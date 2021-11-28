@@ -1,6 +1,6 @@
-import { Volunteer } from '../../models';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+const { Volunteer } = require('../../models');
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
 
 const colors = ['red', 'blue', 'pink'];
 
@@ -75,4 +75,4 @@ const loginVolunteer = async (data) => {
 }
 
 const volunteerAuthController = { registerVolunteer, loginVolunteer }
-export default volunteerAuthController;
+module.exports = volunteerAuthController;
