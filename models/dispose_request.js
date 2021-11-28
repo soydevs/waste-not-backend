@@ -32,10 +32,12 @@ const disposeRequestSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
+        ref:'User',
         required: true
     },
     volunteer: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:'Volunteer'
     },
     status: {
         type: String,

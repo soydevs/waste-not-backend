@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 const colors = ['red', 'blue', 'pink'];
 
 const registerVolunteer = async (data) => {
-    const { username, password, name, phone, aadharNo, email } = data;
+    const { username, password, name, phone, aadhaarNo, email } = data;
     
     if(!username || !password || !name || !phone) 
         return { "success":false, "message":"Bad Request", "code":400 }
@@ -28,7 +28,7 @@ const registerVolunteer = async (data) => {
             name,
             phone,
             color,
-            aadharNo,
+            aadhaarNo,
             email
         });
         await volunteer.save();
